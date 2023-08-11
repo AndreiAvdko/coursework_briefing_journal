@@ -1,0 +1,179 @@
+﻿<Window x:Class="Kurs_Database.ChiefEngeneerForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Kurs_Database"
+        mc:Ignorable="d"
+        Title="ChiefEngeneerForm" Height="650" Width="1200" Closing="Window_Closing" WindowStartupLocation="CenterScreen" >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        
+        <Rectangle Grid.Column="0"
+                   Grid.ColumnSpan="6"
+                   Grid.Row="0"
+                   Fill="#41cbc7"
+                   StrokeThickness="2"
+                   Stroke="#4873a6 "/>
+        <Rectangle Grid.Column="0"
+                   Grid.ColumnSpan="7"
+                   Grid.Row="1"
+                   Grid.RowSpan="6"
+                   Fill="#52b0d3"
+                   />
+        <Rectangle Grid.Column="0"
+                   Grid.ColumnSpan="6"
+                   Grid.Row="1"
+                   Grid.RowSpan="6"
+                   Fill="White"
+                   Margin="5 5 5 5"
+                   />
+        <Rectangle Grid.Column="0"
+                   Grid.ColumnSpan="2"
+                   Grid.Row="1"
+                   Grid.RowSpan="6"
+                   Fill="#c2cdd1"
+                   Margin="5 5 0 5"
+                   />
+        <Rectangle Grid.Column="1"
+                   Grid.Row="1"
+                   Grid.RowSpan="6"
+                   Fill="Black"
+                   Margin="5 5 0 5"
+                   Width="2"
+                   HorizontalAlignment="Right"
+                   />
+        <TextBlock x:Name="headerOfWindow"
+               Text="Информация о сотрудниках и оборудовании"
+               Grid.Column="0"
+               Grid.ColumnSpan="7"
+               Grid.Row="0"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center"
+               Foreground="White"
+               FontSize="20"
+               TextWrapping="Wrap"
+               />
+        <StackPanel Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    Grid.Row="1"
+                    Grid.RowSpan="4"
+                    Margin="5 5 3 5"
+                    >
+            <Button x:Name="showListEquipment"
+                    Background="#c2cdd1" 
+                    Content="Список оборудования" 
+                    BorderBrush="#554269"
+                    Padding="5 5 5 5"
+                    Margin="5 5 5 5" Click="showListEquipment_Click"
+                    />
+            <Button x:Name="showListEmployee"
+                    Background="#c2cdd1" 
+                    Content="Список сотрудников"
+                    BorderBrush="#554269"
+                    Padding="5 5 5 5"
+                    Margin="5 5 5 5" Click="showListEmployee_Click"
+                    />
+            <Button x:Name="addEquipment"
+                    Background="#c2cdd1" 
+                    Content="Добавить оборудование" 
+                    BorderBrush="#554269"
+                    Padding="5 5 5 5"
+                    Margin="5 5 5 5" Click="addEquipment_Click"
+                    />
+            <Button x:Name="addEmployee"
+                    Background="#c2cdd1" 
+                    Content="Добавить сотрудника"
+                    BorderBrush="#554269"
+                    Padding="5 5 5 5"
+                    Margin="5 5 5 5" Click="addEmployee_Click"
+                    />
+            <Button x:Name="getReport"
+                    Background="#c2cdd1" 
+                    
+                    BorderBrush="#554269"
+                    Padding="5 5 5 5"
+                    Margin="5 5 5 5" Click="getReport_Click"
+                    >
+                <TextBlock Text="Получить отчёт о действиях с оборудованием"
+                           TextWrapping="Wrap"
+                           TextAlignment="Center"/>
+            </Button>
+            <Button x:Name="deleteEquipment"
+                    Background="#c2cdd1" 
+                    Content="Удалить оборудование" 
+                    BorderBrush="#554269"
+                    Padding="5 5 5 5"
+                    Margin="5 5 5 5" Click="deleteEquipment_Click"
+                    />
+            <Button x:Name="deleteWorker"
+                    Background="#c2cdd1" 
+                    Content="Удалить сотрудника" 
+                    BorderBrush="#554269"
+                    Padding="5 5 5 5"
+                    Margin="5 5 5 5" Click="deleteWorker_Click"
+                    />
+
+        </StackPanel>
+        <StackPanel Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    Grid.Row="4"
+                    Grid.RowSpan="3"
+                    Margin="5 90 3 5"
+                    >
+            <Button x:Name="changeButton"
+                    Background="#8cd6ad" 
+                    Content="Изменить"
+                    BorderBrush="Black"
+                    Padding="5 5 5 5"
+                    Margin="5 5 5 5" Click="changeButton_Click"
+                    />
+            <Button x:Name="cancelButton"
+                    Background="#ecdc9e" 
+                    Content="Отменить удаление"
+                    BorderBrush="Black"
+                    Padding="5 5 5 5"
+                    Margin="5 5 5 5" Click="cancelButton_Click"
+                    />
+            
+            <Button x:Name="hiddenButton"
+                    Background="#f68d93" 
+                    Content="Удалить выделенное"
+                    BorderBrush="Black"
+                    Padding="5 5 5 5"
+                    Margin="5 5 5 5" Click="hiddenButton_Click"
+                    />
+            <Button x:Name="exitFromSystems"
+                    Background="#c2cdd1" 
+                    Content="Выйти из системы" 
+                    BorderBrush="#554269"
+                    Padding="5 5 5 5"
+                    Margin="5 5 5 5" Click="exitFromSystems_Click"/>
+        </StackPanel>
+        <DataGrid x:Name="equipSPInfo"
+                  Grid.Row="1"
+                  Grid.RowSpan="6"
+                  Grid.Column="2"
+                  Grid.ColumnSpan="4"
+                  Margin="1 5 5 5"
+                  AutoGenerateColumns="False" RowEditEnding="equipSPInfo_RowEditEnding"
+                  />
+        
+    </Grid>
+</Window>
